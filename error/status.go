@@ -104,6 +104,7 @@ func Forward(err error) error {
 
 	if s, ok := FromError(err); ok {
 		newStatus.Code = s.Code
+		newStatus.Message = s.Message
 		newStatus.Caller += s.Detail()
 	} else {
 		newStatus.Caller += stdErrFormat(err)
