@@ -35,6 +35,11 @@ func FormatHour(t time.Time) string {
 	return t.Format(YmdH)
 }
 
+// TodayTime today time
+func TodayTime(t time.Time) time.Time {
+	return time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, t.Location())
+}
+
 // FormatDay to Ymd
 func FormatDay(t time.Time) string {
 	return t.Format(Ymd)
